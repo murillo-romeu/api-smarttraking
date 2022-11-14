@@ -7,9 +7,7 @@ import { JogadoresModule } from './jogadores/jogadores.module';
     MongooseModule.forRoot('mongodb+srv://murillosi:crumu147@cluster0.psh2vx5.mongodb.net/smartraking?retryWrites=true&w=majority',
     {
       useNewUrlParser: true, 
-      useCreateIndex: true, 
-      useUnifiedTopology: true, 
-      useFindAndModify: false
+      useUnifiedTopology: true
     }),
     JogadoresModule
   ],
