@@ -43,7 +43,7 @@ export class JogadoresService {
     }
 
     async deletarJogador(email): Promise<any> {
-        return await this.jogadorModel.remove({
+        return await this.jogadorModel.deleteOne({
             email
         }).exec();
     }
