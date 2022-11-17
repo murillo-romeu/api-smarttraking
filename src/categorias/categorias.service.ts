@@ -90,4 +90,15 @@ export class CategoriasService {
 
         await this.categoriaModel.findByIdAndUpdate(idCategoria, { $set: categoriaEncontrada }).exec()
     }
+
+    async consultarCategoriaJogadorId(idJogador: any): Promise<string> {
+        const jogadorJaCadastradoCategoria = await this.categoriaModel.findOne()
+        .where('jogadores').in(idJogador).exec();
+
+        if (!jogadorJaCadastradoCategoria) {
+            throw new BadRequestException(`O jogador ${idJogador} não está cadastrado em nenhuma categoria.`);
+        }
+
+        return jogadorJaCadastradoCategoria.categoria;
+    }
 }
