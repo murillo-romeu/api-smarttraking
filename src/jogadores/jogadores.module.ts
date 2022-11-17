@@ -10,7 +10,8 @@ import { JogadoresService } from './jogadores.service';
     schema: JogadorSchema
   }])],
   controllers: [JogadoresController],
-  providers: [JogadoresService]
+  providers: [JogadoresService],
+  exports: [JogadoresService]
 })
 export class JogadoresModule {
 
